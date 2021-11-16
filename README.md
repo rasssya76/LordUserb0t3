@@ -68,4 +68,3 @@ Off in web nya
 - All Friends
 - All Contributors
 - All Creator Bot
-- RAMA AWOKAWOKAWOKAWOK 🗿

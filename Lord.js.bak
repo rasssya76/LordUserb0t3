@@ -3137,7 +3137,7 @@ let qqppp = [{
                     },
                     "type": "RESPONSE"
                 }]
-                sendButLocation(from, teks, `R-BOT™© | Allright Reserved.`, thumbnail, qqppp, {contextInfo: { mentionedJid: [nupe]}})
+                sendButLocation(from, teks, `LordUserbot™© | Allright Reserved.`, thumbnail, qqppp, {contextInfo: { mentionedJid: [nupe]}})
 				
 } catch (e){
 reply(`${e}`)
@@ -3758,7 +3758,7 @@ if (budy.startsWith('$')){
 if (!Ofc.key.fromMe && !isOwner && !isCreator ) return reply(mess.only.owner)
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return reply(`R-BOT :~ ${err}`)
+if (err) return reply(`LordUserbot :~ ${err}`)
 if (stdout) {
 reply(stdout)
 }
