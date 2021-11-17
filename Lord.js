@@ -2799,22 +2799,11 @@ Alasan : ${reason}`, [sender], true)
 									exif.create(arg.split('|')[0], arg.split('|')[1])
 									reply('Sukses Lord')
 									break
-						case 'owner':{
-							const ownerContact = [owner_number, "", "", "", "", "", "", "", "", "", ""]
-							let ini_list = []
-							for (let i of ownerContact.map(v => v + '@s.whatsapp.net')) {
-								const vname = Zeeone.contacts[i] != undefined ? Zeeone.contacts[i].vname || Zeeone.contacts[i].notify : undefined
-								ini_list.push({
-									"displayName": `${owner_name}`,
-									"vcard": `BEGIN:VCARD\nVERSION:3.0\nN:Sy;Bot;;;\nFN:${vname}\nitem1.TEL;waid=${i.split('@')[0]}:${i.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`
-									})
-									}
-									hehe = await Zeeone.sendMessage(from, {
-										"displayName": `${ini_list.length} kontak`,
-										"contacts": ini_list 
-										}, 'contactsArrayMessage', { quoted: Ofc })
-										Zeeone.sendMessage(from, `Nih Kak Contact Owner Ku ✨`, text, {quoted: hehe})
-										}
+						case 'owner':
+						case 'creator':
+						    	sendKontak(from, `${owner_number}`, `${owner_name}`, 'Sv Rama!!')
+						    	txtt =`Hai Kak ${pushname}\nItu Ownerku, Mau tau soal apa ya?`
+						    	Zeeone.relayWAMessage(prep)
 										break
 						case 'lirik':
 									if (args.length < 1) return reply('Judulnya?')
