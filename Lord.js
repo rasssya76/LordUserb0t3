@@ -2554,13 +2554,13 @@ Alasan : ${reason}`, [sender], true)
 						case 'ttp':  
                     if (args.length < 1) return reply(lang.noteks(prefix, command))
                     ttp = args.join(' ')
-                    anu1 = await getBuffer(`https://api.xteam.xyz/ttp?file&text=${ttp}`)
+                    anu1 = await getBuffer(`https://api.lolhuman.xyz/api/attp2?apikey=${lolkey}&text=${ttp}`)
                     Zeeone.sendMessage(from, anu1, image, {quoted: ftroli, caption : '.sticker'})
                     break
                        case 'attp':  
                     if (args.length < 1) return reply(lang.noteks(prefix, command))
                     hhhh = q
-                    anu1 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${hhhh}`)
+                    anu1 = await getBuffer(`https://api.lolhuman.xyz/api/attp?apikey=${lolkey}&text=${hhhh}`)
                     Zeeone.sendMessage(from, anu1, sticker, {quoted: Ofc})
                     break
 						case 'memegenerator': case 'memegen':
