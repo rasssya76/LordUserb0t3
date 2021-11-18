@@ -115,7 +115,7 @@ let owner_name = setting.ownername
 let owner_number = setting.ownerNumber
 let gamewaktu = "3" 
 let numbernye = "0" 
-let simbolnya = "•"
+let simbolnya = "❑"
 let petik = '```'
 let enter = '\n'
 let notnot = `NOTE:${enter}Jika whatsapp mod kamu belum support button silahkan tonton video ini https://youtu.be/ERGID4Fmo9w`
@@ -1578,21 +1578,15 @@ _Tunggu Proses Upload Media_`
 											})
 										}).catch((err) => reply(`Link tidak valid`))
 									break 
-						case 'tiktokmusic': case 'tiktokaudio':  
-                                                                        if (!q) return reply('Linknya?')
-									if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid Link')
-									
-									let audi = q
-									hx.ttdownloader(audi)
-									.then(result => {
-										const { wm, nowm, audio } = result
-										axios.get(`https://tinyurl.com/api-create.php?url=${audio}`)
-										.then(async (a) => {
-                                                                                 let audin = await getBuffer(audio)
-											Zeeone.sendMessage(from,audin,MessageType.audio,{mimetype:'audio/mp4',quoted: Ofc})
-											})
-										}).catch((err) => reply(`Link tidak valid`))
-									break
+						   case 'ttaudio': 
+                           case 'tiktokmusic': 
+                           case 'tiktokaudio':
+                        reply(mess.wait)
+                   if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+                   ini_link = args[0]
+                   get_audio = await getBuffer(`https://api.lolhuman.xyz/api/tiktokmusic?apikey=${lolkey}&url=${ini_link}`)
+                   Zeeone.sendMessage(from, get_audio, audio, { mimetype: Mimetype.mp4Audio, quoted: Ofc })
+                   break
 						case 'playvideo': case 'playmp4': case 'ytmp4': case 'ytvideo':{
 									if (!q) return reply(`Example : ${prefix+command} query`)
 									reply(mess.wait)
