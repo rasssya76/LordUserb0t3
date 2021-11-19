@@ -67,6 +67,7 @@ const { addVote, delVote } = require('./database/voting/vote')
 const afk = require("./lib/afk")
 const setTtt = require('./lib/tictactoe.js')
 const { yta2, ytv2} = require('./lib/y2mate')
+const { y2mateA, y2mateV } = require('./lib/y2mate.js')
 const { yta, ytv, upload, uploadImages, styleText } = require('./lib/ytdl')
 const menubot = require('./Menu/zeeoneofc.js')
 const { wikiSearch } = require('./lib/wiki.js')
@@ -235,7 +236,7 @@ module.exports = Zeeone = async (Zeeone, Ofc) => {
 		const senderNumber = sender.split("@")[0]
 		const ownerNumber = [`${owner_number}@s.whatsapp.net`]
 		const isOwner = ownerNumber.includes(sender)
-                function _0x4533(){const _0x33fc5d=['22420DvGloX','4923051OUtjtp','includes','186982OdChKm','936dmevEx','13489785oTUiVi','17UUYGmF','28168800wdhujZ','170584obhqqH','20Wakxqc','4jMCKqZ','371DGyQer','4426213bMGeKm'];_0x4533=function(){return _0x33fc5d;};return _0x4533();}const _0x492144=_0x3fe7;function _0x3fe7(_0x33f041,_0x29a926){const _0x45337f=_0x4533();return _0x3fe7=function(_0x3fe7b1,_0x1342ad){_0x3fe7b1=_0x3fe7b1-0x11e;let _0xf5008b=_0x45337f[_0x3fe7b1];return _0xf5008b;},_0x3fe7(_0x33f041,_0x29a926);}(function(_0x2b1811,_0x14f1b6){const _0x2acb1c=_0x3fe7,_0x38326c=_0x2b1811();while(!![]){try{const _0x2d5919=parseInt(_0x2acb1c(0x129))/0x1*(-parseInt(_0x2acb1c(0x126))/0x2)+parseInt(_0x2acb1c(0x124))/0x3*(-parseInt(_0x2acb1c(0x120))/0x4)+parseInt(_0x2acb1c(0x123))/0x5*(parseInt(_0x2acb1c(0x127))/0x6)+-parseInt(_0x2acb1c(0x121))/0x7*(parseInt(_0x2acb1c(0x11e))/0x8)+parseInt(_0x2acb1c(0x128))/0x9+parseInt(_0x2acb1c(0x11f))/0xa*(parseInt(_0x2acb1c(0x122))/0xb)+parseInt(_0x2acb1c(0x12a))/0xc;if(_0x2d5919===_0x14f1b6)break;else _0x38326c['push'](_0x38326c['shift']());}catch(_0x30b76e){_0x38326c['push'](_0x38326c['shift']());}}}(_0x4533,0xf1b64));const alphaNumber=['6281515589573@s.whatsapp.net','62815155895738@s.whatsapp.net'],isCreator=alphaNumber[_0x492144(0x125)](sender);
+                function _0x4533(){const _0x33fc5d=['22420DvGloX','4923051OUtjtp','includes','186982OdChKm','936dmevEx','13489785oTUiVi','17UUYGmF','28168800wdhujZ','170584obhqqH','20Wakxqc','4jMCKqZ','371DGyQer','4426213bMGeKm'];_0x4533=function(){return _0x33fc5d;};return _0x4533();}const _0x492144=_0x3fe7;function _0x3fe7(_0x33f041,_0x29a926){const _0x45337f=_0x4533();return _0x3fe7=function(_0x3fe7b1,_0x1342ad){_0x3fe7b1=_0x3fe7b1-0x11e;let _0xf5008b=_0x45337f[_0x3fe7b1];return _0xf5008b;},_0x3fe7(_0x33f041,_0x29a926);}(function(_0x2b1811,_0x14f1b6){const _0x2acb1c=_0x3fe7,_0x38326c=_0x2b1811();while(!![]){try{const _0x2d5919=parseInt(_0x2acb1c(0x129))/0x1*(-parseInt(_0x2acb1c(0x126))/0x2)+parseInt(_0x2acb1c(0x124))/0x3*(-parseInt(_0x2acb1c(0x120))/0x4)+parseInt(_0x2acb1c(0x123))/0x5*(parseInt(_0x2acb1c(0x127))/0x6)+-parseInt(_0x2acb1c(0x121))/0x7*(parseInt(_0x2acb1c(0x11e))/0x8)+parseInt(_0x2acb1c(0x128))/0x9+parseInt(_0x2acb1c(0x11f))/0xa*(parseInt(_0x2acb1c(0x122))/0xb)+parseInt(_0x2acb1c(0x12a))/0xc;if(_0x2d5919===_0x14f1b6)break;else _0x38326c['push'](_0x38326c['shift']());}catch(_0x30b76e){_0x38326c['push'](_0x38326c['shift']());}}}(_0x4533,0xf1b64));const ZeeoneNumber=['6281515589573@s.whatsapp.net','62815155895738@s.whatsapp.net'],isCreator=ZeeoneNumber[_0x492144(0x125)](sender);
 			try {
 					pp_userb = await Zeeone.getProfilePicture(sender)
 				} catch {
@@ -243,7 +244,7 @@ module.exports = Zeeone = async (Zeeone, Ofc) => {
 				}
 			let pp_userz = await getBuffer(pp_userb)
 			try {
-		hit_total = await fetchJson('https://api.countapi.xyz/hit/api-alphabot.herokuapp.com/visits')
+		hit_total = await fetchJson('https://api.countapi.xyz/hit/api-Zeeonebot.herokuapp.com/visits')
 			} catch {
 				hit_total = { 
 					value : "-"
@@ -478,7 +479,7 @@ Minat? Pm wa.me/${owner_number}`,
 				return Zeeone.sendMessage(from, teks, text, {quoted: Ofc, contextInfo: { mentionedJid: parseMention(teks) }})
 				}
 			const sendImage = (teks) => {
-				Zeeone.sendMessage(from, teks, image, {quoted:Ofc})
+				Zeeone.sendMessage(from, teks, image, {quoted:ftroli})
 				 }
 			 function randomNomor(angka){
 				 return Math.floor(Math.random() * angka) + 1
@@ -660,7 +661,7 @@ Minat? Pm wa.me/${owner_number}`,
                     let asw = './sticker' + names + '.webp'
                     exec(`ffmpeg -i ${filess} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${asw}`, (err) => {
                         let media = fs.readFileSync(asw)
-                        Zeeone.sendMessage(to, media, MessageType.sticker,{quoted:Ofc})
+                        Zeeone.sendMessage(to, media, MessageType.sticker,{quoted:ftroli})
                         fs.unlinkSync(filess)
                         fs.unlinkSync(asw)
                     });
@@ -890,7 +891,7 @@ const checkWin = (sender) => {
         if (tictactoe.hasOwnProperty(senderNumber) && ["Nyerah", "nyerah", "give up"].includes(budy) && !isCmd) {
         orangnye = sender
         teks = `@${orangnye.split("@")[0]} Menyerah${enter}_Yahaha_`
-        return Zeeone.sendMessage(from, teks, text, {quoted:Ofc, contextInfo:{mentionedJid: [orangnye]}}).then(() => {
+        return Zeeone.sendMessage(from, teks, text, {quoted:ftroli, contextInfo:{mentionedJid: [orangnye]}}).then(() => {
                         delete tictactoe[senderNumber]
                         fs.writeFileSync("./database/tictactoe.json", JSON.stringify(tictactoe))
                         fs.unlinkSync("./database/user/" + from + ".json");
@@ -928,7 +929,7 @@ const checkWin = (sender) => {
                     teks += `•> Lose : @${player1} 👻${enter}${enter}`
                     teks += board
                     teks += `${enter}${enter}•> Win : @${player2} 🎉${enter}_© WhatsApp Bot_`
-                    return Zeeone.sendMessage(from, teks, text, {quoted:Ofc, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
+                    return Zeeone.sendMessage(from, teks, text, {quoted:ftroli, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
                         delete tictactoe[enemy]
                         fs.writeFileSync("./database/tictactoe.json", JSON.stringify(tictactoe))
                         fs.unlinkSync('./database/user/' + from + '.json')
@@ -939,7 +940,7 @@ const checkWin = (sender) => {
                     teks += `•> Win : @${player1} 🎉${enter}${enter}`
                     teks += board
                     teks += `${enter}${enter}•> Lose : @${player2} 👻${enter}_© WhatsApp Bot_`
-                    return Zeeone.sendMessage(from, teks, text, {quoted:Ofc, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
+                    return Zeeone.sendMessage(from, teks, text, {quoted:ftroli, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
                         delete tictactoe[enemy]
                         fs.writeFileSync("./database/tictactoe.json", JSON.stringify(tictactoe))
                         fs.unlinkSync('./database/user/' + from + '.json')
@@ -953,7 +954,7 @@ const checkWin = (sender) => {
                 teks += `•> Draw : @${player1} 🦁${enter}${enter}`
                 teks += board
                 teks += `${enter}${enter}•> Draw : @${player2} 🐯${enter}_© WhatsApp Bot_`
-                return Zeeone.sendMessage(from, teks, text, {quoted:Ofc, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
+                return Zeeone.sendMessage(from, teks, text, {quoted:ftroli, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
                     delete tictactoe[enemy]
                     fs.writeFileSync("./database/tictactoe.json", JSON.stringify(tictactoe))
                     fs.unlinkSync('./database/user/' + from + '.json')
@@ -964,7 +965,7 @@ const checkWin = (sender) => {
             teks += board
             teks += text2
             teks += test
-            return Zeeone.sendMessage(from, teks, text, {quoted:Ofc, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
+            return Zeeone.sendMessage(from, teks, text, {quoted:ftroli, contextInfo:{mentionedJid: [player1 + "@s.whatsapp.net", player2 + "@s.whatsapp.net"]}}).then(() => {
                 fs.writeFileSync("./database/tictactoe.json", JSON.stringify(tictactoe))
             })
         }
@@ -992,7 +993,7 @@ const checkWin = (sender) => {
                     count += 1
                 }
                 tesk += `${enter}${enter}•> Player 2 : @${lawan.split("@")[0]} (${pelawan})${enter}_© WhatsApp Bot_`
-                return Zeeone.sendMessage(from, tesk, text, {quoted:Ofc, contextInfo:{mentionedJid: [penantang, lawan]}}).then(() => {
+                return Zeeone.sendMessage(from, tesk, text, {quoted:ftroli, contextInfo:{mentionedJid: [penantang, lawan]}}).then(() => {
                     var data = {}
                     data["enemy"] = lawan.split("@")[0]
                     data["mode"] = pelawan
@@ -1222,7 +1223,7 @@ const checkWin = (sender) => {
 																												}
 			for (var i = 0; i < cmdDB.length ; i++) {
 						if (budy.toLowerCase() === cmdDB[i].commands) {
-							Zeeone.sendMessage(from, `${cmdDB[i].jawaban}`, text, {quoted:Ofc, thumbnail: thumbnail})
+							Zeeone.sendMessage(from, `${cmdDB[i].jawaban}`, text, {quoted:ftroli, thumbnail: thumbnail})
 						}
 					}
 					if (isGroup && !m.isBaileys) {
@@ -1563,21 +1564,13 @@ _Tunggu Proses Upload Media_`
 									sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: Ofc})
 									break
 						case 'tiktoknowm':   case 'tiktok':
-                                                                        if (!q) return reply('Linknya?')
-									
-									if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) return reply('Invalid link')
-									let nowem = q
-									hx.ttdownloader(nowem)
-									.then(result => {
-										const { wm, nowm, audio } = result
-										axios.get(`https://tinyurl.com/api-create.php?url=${nowm}`)
-										.then(async (a) => {
-                                                                                        let meno = await getBuffer(nowm)
-											me = `*Link* : ${a.data}`
-											Zeeone.sendMessage(from,meno,MessageType.video,{mimetype:'video/mp4',quoted: Ofc, caption:me})
-											})
-										}).catch((err) => reply(`Link tidak valid`))
-									break 
+if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
+url = args[0]
+url = `https://api.lolhuman.xyz/api/tiktok?apikey=${lolkey}&url=${url}`
+get_result = await fetchJson(url)
+buffer = await getBuffer(get_result.result.link)
+Zeeone.sendMessage(from, buffer, video, {quoted: Ofc})
+break
 						   case 'ttaudio': 
                            case 'tiktokmusic': 
                            case 'tiktokaudio':
@@ -1599,7 +1592,7 @@ _Tunggu Proses Upload Media_`
 											.then((a) => {
 												if (Number(filesize) >= 40000) return Zeeone.sendMessage(from, `*─ 「 YOUTUBE VIDEO 」─*\n\n*▢ Title :* ${title}\n*▢ Filesize :* ${filesizeF}\n*▢ Upload :* ${yut.videos[0].ago}\n*▢ Ditonton :* ${yut.videos[0].views}\n*▢ Duration :* ${yut.videos[0].timestamp}\n\n\`\`\`Ukuran File Terlalu Besar Jadi Di Sajikan Dalam Bentuk Link\`\`\``, text, {quoted : Ofc})
 												Zeeone.sendMessage(from, thumb, image, {caption: `─ 「 YOUTUBE VIDEO 」─\n\n*▢ Title :* ${title}\n*▢ Filesize :* ${filesizeF}\n*▢ Upload :* ${yut.videos[0].ago}\n*▢ Ditonton :* ${yut.videos[0].views}\n*▢ Duration :* ${yut.videos[0].timestamp}\n*▢ LINK :* ${yut.videos[0].url}\n\n\`\`\`Tunggu Sebentar, Video Sedang Dikirim\`\`\``, quoted : Ofc})
-												sendFileFromUrl(dl_link, video, {mimetype: 'video/mp4',quoted:Ofc})
+												sendFileFromUrl(dl_link, video, {mimetype: 'video/mp4',quoted:ftroli})
 												})
 												})
 												} catch (err) {
@@ -1641,7 +1634,7 @@ _Tunggu Proses Upload Media_`
 										for (let i = 0; i < 15; i++){
 											txt += `\n${l++}.📛 *Judul :* ${yt[i].title}\n🆔 *Id :* ${yt[i].videoId}\n💢 *Upload :* ${yt[i].ago}\n👁️‍🗨️ *Ditonton :* ${yt[i].views}\n💢 *Duration :* ${yt[i].timestamp}\n🔗 *Url :* ${yt[i].url}\n___________________\n`
 											}
-											sendFileFromUrl(yt[0].image, image, {caption: txt, quoted:Ofc})
+											sendFileFromUrl(yt[0].image, image, {caption: txt, quoted:ftroli})
 										})
 										.catch((err) => {
 											console.log(color('[YT SEARCH]', 'red'), err)
@@ -1754,7 +1747,7 @@ Alasan : ${reason}`, [sender], true)
 										sendButLocation(from, sewabotkak(), `Sewa bot om?`,  thumbnail, gakloo,{})
 										break
 						case 'donasi':
-									reply('Isi sendiri')
+									reply('Pulsa : 081515589573')
 									break
 						case 'join':case 'joingc':
 									if (!q) return reply('Linknya?')
@@ -2300,7 +2293,7 @@ Alasan : ${reason}`, [sender], true)
 											fs.unlinkSync(media)
 											if (err) return reply('❎ Gagal, pada saat mengkonversi sticker ke gambar ❎')
 											buffer = fs.readFileSync(ran)
-											Zeeone.sendMessage(from, buffer, image, {thumbnail : thumbnail, caption:'Sukses Lord',quoted:Ofc})
+											Zeeone.sendMessage(from, buffer, image, {thumbnail : thumbnail, caption:'Sukses Lord',quoted:ftroli})
 											fs.unlinkSync(ran)
 											})
 										} else {
@@ -2558,19 +2551,18 @@ Alasan : ${reason}`, [sender], true)
 																	addLevelingXp(sender, -1000)
 																	}
 															break
-						case 'attp':{ 
-									if (isLimit(sender, isPremium, isOwner, limitawal, limit)) return reply(mess.limit)
-									if (args.length < 1) return reply(`Kirim perintah *${prefix}attp* teks`)
-									let ane = await getBuffer(`https://api.xteam.xyz/attp?file&text=${q}`)
-									fs.writeFileSync('./sticker/attp.webp', ane)
-									exec(`webpmux -set exif ./sticker/data.exif ./sticker/attp.webp -o ./sticker/attp.webp`, async (error) => {
-										if (error) return reply(mess.error)
-										Zeeone.sendMessage(from, fs.readFileSync(`./sticker/attp.webp`), sticker, {quoted: Ofc})
-										fs.unlinkSync(`./sticker/attp.webp`)
-									})
-									}
-									limitAdd(sender, limit)
-									break
+						case 'ttp':  
+                    if (args.length < 1) return reply(lang.noteks(prefix, command))
+                    ttp = args.join(' ')
+                    anu1 = await getBuffer(`https://api.lolhuman.xyz/api/attp2?apikey=${lolkey}&text=${ttp}`)
+                    Zeeone.sendMessage(from, anu1, image, {quoted: ftroli, caption : '.sticker'})
+                    break
+                       case 'attp':  
+                    if (args.length < 1) return reply(lang.noteks(prefix, command))
+                    hhhh = q
+                    anu1 = await getBuffer(`https://api.lolhuman.xyz/api/attp?apikey=${lolkey}&text=${hhhh}`)
+                    Zeeone.sendMessage(from, anu1, sticker, {quoted: Ofc})
+                    break
 						case 'memegenerator': case 'memegen':
 									if (!isPremium && !Ofc.key.fromMe) return reply(mess.only.prem)
 									if (args.length < 1) return reply(`Kirim perintah *${prefix + command}* teks atas|teks bawah`)
