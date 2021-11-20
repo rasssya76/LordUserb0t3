@@ -1563,13 +1563,17 @@ _Tunggu Proses Upload Media_`
 									reply(result)
 									sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: Ofc})
 									break
-						case 'tiktoknowm':   case 'tiktok':
-if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
-url = args[0]
-url = `https://api.lolhuman.xyz/api/tiktok?apikey=${lolkey}&url=${url}`
-get_result = await fetchJson(url)
-buffer = await getBuffer(get_result.result.link)
-Zeeone.sendMessage(from, buffer, video, {quoted: Ofc})
+	    			case 'tiktok':
+                   case 'tiktokdl':
+                   case 'tiktoknowm':
+if (!c) return reply('Linknya?')
+var { TiktokDownloader } = require('./lib/tiktokdl')
+sticWait(from)
+res = await TiktokDownloader(`${c}`).catch(e => {
+reply(mess.error.api)
+})
+console.log(res)
+sendMediaURL(from, `${res.result.nowatermark}`)
 break
 						   case 'ttaudio': 
                            case 'tiktokmusic': 
@@ -1747,7 +1751,7 @@ Alasan : ${reason}`, [sender], true)
 										sendButLocation(from, sewabotkak(), `Sewa bot om?`,  thumbnail, gakloo,{})
 										break
 						case 'donasi':
-									reply('Isi sendiri')
+									reply('Pulsa : 081515589573')
 									break
 						case 'join':case 'joingc':
 									if (!q) return reply('Linknya?')
