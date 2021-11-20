@@ -621,8 +621,8 @@ Minat? Pm wa.me/${owner_number}`,
 						let name = `${author}_${packname}`
 						if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
 				const json = {	
-					"sticker-pack-name": R-BOT,
-					"sticker-pack-publisher": BY RAMA,
+				    "sticker-pack-name": packname,
+					"sticker-pack-publisher": author,
 				}
 				const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
 				const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
@@ -2792,6 +2792,7 @@ Alasan : ${reason}`, [sender], true)
                         reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim\nDurasi sticker video 1-9 detik...`)
                     }
                     break
+
 						case 'exif':
 									if (!Ofc.key.fromMe && !isOwner)return reply(mess.only.owner)
 									if (args.length < 1) return reply(`Penggunaan ${prefix}exif nama|author`)
