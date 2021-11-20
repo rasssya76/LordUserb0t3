@@ -1566,10 +1566,10 @@ _Tunggu Proses Upload Media_`
 	    			case 'tiktok':
                    case 'tiktokdl':
                    case 'tiktoknowm':
-if (!c) return reply('Linknya?')
+if (args.length == 0) return reply('Linknya?')
 var { TiktokDownloader } = require('./lib/tiktokdl')
-sticWait(from)
-res = await TiktokDownloader(`${c}`).catch(e => {
+reply(mess.wait)
+res = await TiktokDownloader(`${q}`).catch(e => {
 reply(mess.error.api)
 })
 console.log(res)
