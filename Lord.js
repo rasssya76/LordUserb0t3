@@ -621,8 +621,8 @@ Minat? Pm wa.me/${owner_number}`,
 						let name = `${author}_${packname}`
 						if (fs.existsSync(`./sticker/${name}.exif`)) return `./sticker/${name}.exif`
 				const json = {	
-					"sticker-pack-name": packname,
-					"sticker-pack-publisher": author,
+					"sticker-pack-name": R-BOT,
+					"sticker-pack-publisher": BY RAMA,
 				}
 				const littleEndian = Buffer.from([0x49, 0x49, 0x2A, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00])	
 				const bytes = [0x00, 0x00, 0x16, 0x00, 0x00, 0x00]	
@@ -1547,13 +1547,6 @@ Pastikan Transfer Limit Benar`)
 						case 'mediafire':
 if (args.length < 1) return reply('Link Nya Mana? ')
 if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
-if (Number(filesize) >= 30000) return reply(`*「 MEDIAFIRE DOWNLOAD 」*
-
-*◈ Nama :* ${res[0].nama}
-*◈ Ukuran :* ${res[0].size}
-*◈ Link :* ${res[0].link}
-
-_Maaf size melebihi batas maksimal, Silahkan klik link diatas_`)
 reply(mess.wait)
 teks = args.join(' ')
 res = await mediafireDl(teks)
@@ -2726,67 +2719,79 @@ Alasan : ${reason}`, [sender], true)
 																				 }
 																			}
 																	 break
-						case 'sticker': case 'stiker':  case 'stickergif': case 'stikergif': case 'sgif': case 's':
-									if (isLimit(sender, isPremium, isOwner, limitawal, limit)) return reply(mess.limit)
-									if ( isQuotedImage) {
-										let encmedia = isQuotedImage ? JSON.parse(JSON.stringify(Ofc).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : Ofc
-										let media = await Zeeone.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
-										await ffmpeg(`${media}`)
-										.input(media)
-										.on('start', function (cmd) {
-											console.log(color(`STARTED : ${cmd}`))
-											})
-											.on('error', function (err) {
-												console.log(color(`ERROR : ${err}`))
-												fs.unlinkSync(media)
-												reply(mess.error)
-												})
-												.on('end', function () {
-													console.log(color(`FINISH`,'magenta'))
-													exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-														if (error) return reply(mess.error)
-														Zeeone.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: Ofc})
-														limitAdd(sender, limit)
-														fs.unlinkSync(media)
-														fs.unlinkSync(`./sticker/${sender}.webp`)
-														})
-														})
-														.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-														.toFormat('webp')
-														.save(`./sticker/${sender}.webp`)
-														} else if ((isQuotedVideo && Ofc.message.videoMessage.fileLength < 10000000 || isQuotedVideo && Ofc.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.fileLength < 10000000)) {
-															let encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(Ofc).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : Ofc
-															let media = await Zeeone.downloadAndSaveMediaMessage(encmedia, `./sticker/${sender}`)
-															reply(mess.wait)
-															await ffmpeg(`${media}`)
-															.inputFormat(media.split('.')[4])
-															.on('start', function (cmd) {
-																console.log(color(`STARTED : ${cmd}`))
-																})
-																.on('error', function (err) {
-																	console.log(color(`ERROR : ${err}`))
-																	fs.unlinkSync(media)
-																	let tipe = media.endsWith('.mp4') ? 'video' : 'gif'
-																	reply(mess.error)
-																	})
-																	.on('end', function () {
-																		console.log(color(`FINISH`,'magenta'))
-																		exec(`webpmux -set exif ./sticker/data.exif ./sticker/${sender}.webp -o ./sticker/${sender}.webp`, async (error) => {
-																			if (error) return reply(mess.error)
-																			Zeeone.sendMessage(from, fs.readFileSync(`./sticker/${sender}.webp`), sticker, {quoted: Ofc})
-																			limitAdd(sender, limit)
-																			fs.unlinkSync(media)
-																			fs.unlinkSync(`./sticker/${sender}.webp`)
-																			})
-																			})
-																			.addOutputOptions([`-vcodec`,`libwebp`,`-vf`,`scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
-																			.toFormat('webp')
-																			.save(`./sticker/${sender}.webp`)
-																			} else {
-																				reply(`Kirim gambar/video dengan caption ${prefix}sticker atau tag gambar/video yang sudah dikirim\nNote : Durasi video maximal 10 detik`)
-																				}
-																				limitAdd(sender, limit)
-												break
+						                    case 'sticker':
+					case 'stiker': case 's':
+					
+						if (isMedia && !Ofc.message.videoMessage || isQuotedImage) {
+							const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(Ofc).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : Ofc
+							const media = await Zeeone.downloadAndSaveMediaMessage(encmedia)
+							ran = getRandom('.webp')
+                        await ffmpeg(`./${media}`)
+                            .input(media)
+                            .on('start', function (cmd) {
+                                console.log(`Started : ${cmd}`)
+                            })
+                            .on('error', function (err) {
+                                console.log(`Error : ${err}`)
+                                fs.unlinkSync(media)
+                                 })
+                            .on('end', async function () {
+                                console.log('Finish')
+                                await Zeeone.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: fgclink })
+                                    fs.unlinkSync(media)
+                                    fs.unlinkSync(ran)
+                                })
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .toFormat('webp')
+                            .save(ran)
+                    } else if ((isMedia && Ofc.message.videoMessage.seconds < 11 || isQuotedVideo && Ofc.message.extendedTextMessage.contextInfo.quotedMessage.videoMessage.seconds < 11) && args.length == 0) {
+                        const encmedia = isQuotedVideo ? JSON.parse(JSON.stringify(Ofc).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : Ofc
+                        const media = await Zeeone.downloadAndSaveMediaMessage(encmedia)
+                        ran = getRandom('.webp')
+                        await ffmpeg(`./${media}`)
+                            .inputFormat(media.split('.')[1])
+                            .on('start', function (cmd) {
+                                console.log(`Started : ${cmd}`)
+                            })
+                            .on('error', function (err) {
+                                console.log(`Error : ${err}`)
+                                fs.unlinkSync(media)
+                                tipe = media.endsWith('.mp4') ? 'video' : 'gif'
+                                reply(`❌ Gagal, pada saat mengkonversi ${tipe} ke stiker`)
+                            })
+                            .on('end', async function () {
+                                console.log('Finish')
+                                await Zeeone.sendMessage(from, fs.readFileSync(ran), sticker, { quoted: fgclink })
+                                    fs.unlinkSync(media)
+                                    fs.unlinkSync(ran)
+                                })
+                            .addOutputOptions([`-vcodec`, `libwebp`, `-vf`, `scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse`])
+                            .toFormat('webp')
+                            .save(ran)
+                    } else if ((isMedia || isQuotedImage) && args[0] == 'nobg') {
+                        const encmedia = isQuotedImage ? JSON.parse(JSON.stringify(Ofc).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo : Ofc
+                        const media = await Zeeone.downloadAndSaveMediaMessage(encmedia)
+                        ranw = getRandom('.webp')
+                        ranp = getRandom('.png')
+                        reply(mess.wait)
+                        keyrmbg = 'bcAvZyjYAjKkp1cmK8ZgQvWH'
+                        await removeBackgroundFromImageFile({ path: media, apiKey: keyrmbg, size: 'auto', type: 'auto', ranp }).then(res => {
+                            fs.unlinkSync(media)
+                            let bufferir9vn5 = Buffer.from(res.base64img, 'base64')
+                            fs.writeFileSync(ranp, bufferir9vn5, (err) => {
+                                if (err) return reply('Gagal, Terjadi kesalahan, silahkan coba beberapa saat lagi.')
+                            })
+                            exec(`ffmpeg -i ${ranp} -vcodec libwebp -filter:v fps=fps=20 -lossless 1 -loop 0 -preset default -an -vsync 0 -s 512:512 ${ranw}`, (err) => {
+                                fs.unlinkSync(ranp)
+                                if (err) return reply('emror bang')
+                                Zeeone.sendMessage(from, fs.readFileSync(ranw), sticker, { quoted: Ofc})
+                                    fs.unlinkSync(ranw)
+                                })
+                            })
+                    } else {
+                        reply(`Kirim gambar dengan caption ${prefix}sticker atau tag gambar yang sudah dikirim\nDurasi sticker video 1-9 detik...`)
+                    }
+                    break
 						case 'exif':
 									if (!Ofc.key.fromMe && !isOwner)return reply(mess.only.owner)
 									if (args.length < 1) return reply(`Penggunaan ${prefix}exif nama|author`)
