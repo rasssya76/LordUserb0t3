@@ -1545,24 +1545,29 @@ Pastikan Transfer Limit Benar`)
 										})
 									break
 						case 'mediafire':
-									if (!isPremium) return reply(mess.only.prem)
-									if (args.length < 1) return reply('Masukkan link mediafire')
-									if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply('Linknya Error')
-									reply(mess.wait)
-									teks = args.join(' ')
-									res = await mediafireDl(teks)
-									result = ` *MEDIAFIRE DOWNLOAD*
+if (args.length < 1) return reply('Link Nya Mana? ')
+if(!isUrl(args[0]) && !args[0].includes('mediafire')) return reply(mess.error.api)
+if (Number(filesize) >= 30000) return reply(`*「 MEDIAFIRE DOWNLOAD 」*
+
+*◈ Nama :* ${res[0].nama}
+*◈ Ukuran :* ${res[0].size}
+*◈ Link :* ${res[0].link}
+
+_Maaf size melebihi batas maksimal, Silahkan klik link diatas_`)
+reply(mess.wait)
+teks = args.join(' ')
+res = await mediafireDl(teks)
+result = `*「 MEDIAFIRE DOWNLOAD 」*
 
 *Data Berhasil Didapatkan!*
+\`\`\`◈ Nama : ${res[0].nama}\`\`\`
+\`\`\`◈ Ukuran : ${res[0].size}\`\`\`
+\`\`\`◈ Link : ${res[0].link}\`\`\`
 
-🆔 Nama : ${res[0].nama}
-📊 Ukuran : ${res[0].size}
-💬 Link : ${res[0].link}
-
-_Tunggu Proses Upload Media_`
-									reply(result)
-									sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: Ofc})
-									break
+_File sedang dikirim, Silahkan tunggu beberapa menit_`
+reply(result)
+sendFileFromUrl(res[0].link, document, {mimetype: res[0].mime, filename: res[0].nama, quoted: Ofc})
+break
 	    			case 'tiktok':
                    case 'tiktokdl':
                    case 'tiktoknowm':
