@@ -1566,7 +1566,7 @@ _Tunggu Proses Upload Media_`
 						case 'tiktoknowm':   case 'tiktok':
 if (args.length == 0) return reply(`Example: ${prefix + command} https://vt.tiktok.com/ZSwWCk5o/`)
 url = args[0]
-url = `https://api.lolhuman.xyz/api/tiktok?apikey=${lolkey}&url=${url}`
+url = `https://api.lolhuman.xyz/api/tiktok?apikey=${lolkey}&url=${ini_link}`
 get_result = await fetchJson(url)
 buffer = await getBuffer(get_result.result.link)
 Zeeone.sendMessage(from, buffer, video, {quoted: Ofc})
